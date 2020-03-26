@@ -2,7 +2,7 @@
 
 **This repository's issues section is only for bug tracking, code contribution, questions about the inner workings of GAB/design decisions or other code-related purposes. For help on how to use GAB, please visit [our Discord Server](https://discord.gg/g2Yx8pb) instead.**
 
-GAwesomeBot is open source, as such, anyone can clone, fork, and contribute to the code GAB runs. Before you do so, please make sure you're up-to-date on [our license](https://github.com/GAwesomeBot/<repo>/blob/master/LICENSE) and its terms. If you want to contribute to GAB's development, you can help us track down bugs and reporting them [here](https://github.com/GAwesomeBot/<repo>/issues). If you want to contribute to the codebase, make sure you follow [our ESLint rules](https://github.com/GAwesomeBot/<repo>/blob/master/.eslintrc.json), your Pull Request must not contain any ESLint errors, or it will not be merged.
+GAwesomeBot is open source, as such, anyone can clone, fork, and contribute to the code GAB runs. Before you do so, please make sure you're up-to-date on [our license](https://github.com/GAwesomeBot/web-next/blob/master/LICENSE) and its terms. If you want to contribute to GAB's development, you can help us track down bugs and reporting them [here](https://github.com/GAwesomeBot/web-next/issues). If you want to contribute to the codebase, make sure you follow [our ESLint rules](https://github.com/GAwesomeBot/web-next/blob/master/.eslintrc.json), your Pull Request must not contain any ESLint errors, or it will not be merged.
 
 *Pro Tip: Using an editor that has ESLint syntax checking is super useful when working on GAB!*
 
@@ -15,7 +15,7 @@ To get ready to edit GAwesomeBot's code, do the following:
 3. Run `npm install`
 4. Start coding, making sure to document changes using JSDoc accordingly.
 5. Commit your changes and push them
-6. [Submit a pull request](https://github.com/GAwesomeBot/<repo>/pulls)
+6. [Submit a pull request](https://github.com/GAwesomeBot/web-next/pulls)
 
 Happy coding, GAwesomeUsers!
 
