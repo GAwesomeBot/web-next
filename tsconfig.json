@@ -1,0 +1,36 @@
+{
+	"extends": "eslint-config-bamboo",
+	"compilerOptions": {
+		"target": "ES2019",
+		"lib": [
+			"ESNext",
+			"DOM",
+			"DOM.Iterable"
+		],
+		"esModuleInterop": true,
+		"allowSyntheticDefaultImports": true,
+		"baseUrl": "./src/",
+		"paths": {
+			"@/*": [
+				"./*"
+			]
+		},
+		"resolveJsonModule": true,
+		"types": [
+			"@mdi/js",
+			"@nuxt/types",
+			"@nuxtjs/vuetify",
+			"@types/node",
+			"@types/webpack-env",
+			"nuxt-i18n",
+			"vue",
+			"vuetify",
+			"vuex"
+		]
+	},
+	"include": [
+		"src/**/*.ts",
+		"src/**/*.tsx",
+		"src/**/*.vue"
+	]
+}
