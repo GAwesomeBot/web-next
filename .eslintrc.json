@@ -1,15 +1,41 @@
 {
-	"extends": "bamboo",
+	"extends": [
+		"plugin:vue/recommended",
+		"bamboo"
+	],
 	"rules": {
 		"no-throw-literal": 0,
-		"@typescript-eslint/restrict-plus-operands": 0
+		"@typescript-eslint/restrict-plus-operands": 0,
+		"vue/script-indent": ["error", "tab"],
+		"strict": "off",
+		"vue/html-indent": ["warn", "tab"],
+		"vue/max-attributes-per-line": ["error", {
+			"singleline": 3,
+			"multiline": {
+				"max": 3,
+				"allowFirstLine": true
+			}
+		 }],
+		"no-console": "off",
+		"vue/valid-v-model": "off",
+		"vue/no-parsing-error": "off",
+		"@typescript-eslint/camelcase": "off"
 	},
 	"env": {
 		"es6": true,
-		"node": true
+		"node": true,
+		"browser": true
 	},
+	"parser": "vue-eslint-parser",
 	"parserOptions": {
-		"project": "./tsconfig.eslint.json"
+		"parser": "@typescript-eslint/parser",
+		"project": "./tsconfig.json",
+		"ecmaFeatures": {
+			"jsx": true,
+			"modules": true
+		},
+		"sourceType": "module",
+		"extraFileExtensions": [".vue"]
 	},
 	"overrides": []
 }

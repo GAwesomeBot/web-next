@@ -16,7 +16,7 @@ const SHARED_BROWSERSLIST = [
 	'and not and_chr 78',
 	'and not and_ff 68',
 	'and not android 76',
-	'and not dead',
+	'and not dead'
 ];
 
 const config: Configuration = {
@@ -41,11 +41,11 @@ const config: Configuration = {
 			{ name: 'og:locale', content: 'en_US' },
 			{ name: 'og:site_name', content: 'GAwesomeBot.com' },
 			{ name: 'og:url', content: 'https://GAwesomeBot.com/' },
-			{ name: 'theme-color', content: '#363636' },
+			{ name: 'theme-color', content: '#363636' }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
-		],
+			{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
+		]
 	},
 
 	loading: { color: '#448fa3' },
@@ -58,7 +58,7 @@ const config: Configuration = {
 
 	modules: [
 		'@nuxtjs/vuetify',
-		'nuxt-i18n',
+		'nuxt-i18n'
 	],
 
 	vuetify: {
@@ -66,22 +66,22 @@ const config: Configuration = {
 		// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 		// @ts-ignore
 		theme: {
-			dark: true,
+			dark: true
 		},
 		icons: {
 			iconfont: 'mdiSvg',
-			values: {},
+			values: {}
 		},
 		defaultAssets: {
 			icons: false,
 			font: {
-				family: 'Roboto',
-			},
-		},
+				family: 'Roboto'
+			}
+		}
 	},
 
 	buildModules: [
-		'@nuxt/typescript-build',
+		'@nuxt/typescript-build'
 	],
 
 	build: {
@@ -98,17 +98,17 @@ const config: Configuration = {
 										...SHARED_BROWSERSLIST,
 										'or',
 										'last 4 versions',
-										...SHARED_BROWSERSLIST,
-									].join(' '),
-								],
+										...SHARED_BROWSERSLIST
+									].join(' ')
+								]
 							},
-							corejs: { version: 3 },
-						},
-					],
+							corejs: { version: 3 }
+						}
+					]
 				];
-			},
-		},
-	},
+			}
+		}
+	}
 };
 
 export default config;
