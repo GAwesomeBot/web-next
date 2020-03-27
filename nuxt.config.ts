@@ -57,6 +57,7 @@ const config: Configuration = {
 	plugins: [],
 
 	modules: [
+		'@nuxtjs/axios',
 		'@nuxtjs/vuetify',
 		'nuxt-i18n'
 	],
@@ -66,7 +67,7 @@ const config: Configuration = {
 		// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 		// @ts-ignore
 		theme: {
-			dark: true
+			dark: false
 		},
 		icons: {
 			iconfont: 'mdiSvg',
