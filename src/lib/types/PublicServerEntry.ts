@@ -1,4 +1,4 @@
-export type PublicServerEntryCategory = "Other" | "Gaming" | "Tech" | "Programming" | "Community" | "Bots"
+export type PublicServerEntryCategory = 'Other' | 'Gaming' | 'Tech' | 'Programming' | 'Community' | 'Bots';
 
 export interface PublicServerEntry {
 	id: string;
@@ -9,7 +9,7 @@ export interface PublicServerEntry {
 		id: string;
 		avatar: string;
 		name: string;
-	},
+	};
 	members: number;
 	messages: number;
 	rawCreated: string;
