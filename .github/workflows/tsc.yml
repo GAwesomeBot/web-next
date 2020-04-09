@@ -7,8 +7,8 @@ on:
   pull_request:
 
 jobs:
-  tsc:
-    name: tsc
+  nuxtjs:
+    name: nuxt.js compile
     runs-on: ubuntu-latest
     steps:
       - name: Checkout Project
@@ -24,12 +24,5 @@ jobs:
           key: ${{ runner.os }}-12-${{ hashFiles('**/yarn.lock') }}
       - name: Install Dependencies
         run: yarn --ignore-scripts
-      - name: Copy Configuration
-        run: |
-          pushd src &&
-          cp config.example.ts config.ts &&
-          popd
-      - name: Compile TypeScript
-        uses: icrawl/action-tsc@v1
-        with:
-          build: src
+      - name: Build nuxt.js project
+        run: yarn build
