@@ -23,9 +23,14 @@ export default class Servers extends VuexModule {
 		this.servers.splice(index, 1);
 	}
 
+	@Mutation
+	public limitServerList() {
+		this.servers.splice(50);
+	}
+
 	@Action({ rawError: true })
 	public async fetchServerList() {
-		const res = await axios.get('https://gawesomebot.com/api/servers');
+		const res = await axios.get(`https://gawesomebot.com/api/servers?start=${this.servers.length}&count=50`);
 		const servers = res.data.data as PublicServerEntry[];
 		this.context.commit('setServerList', servers);
 	}

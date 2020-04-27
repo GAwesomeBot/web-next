@@ -44,7 +44,8 @@ const config: Configuration = {
 			{ name: 'theme-color', content: '#363636' }
 		],
 		link: [
-			{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
+			{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
+			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
 		]
 	},
 
@@ -63,11 +64,35 @@ const config: Configuration = {
 	],
 
 	vuetify: {
+		treeShake: true,
 		// Read the vuetify docs & https://github.com/nuxt-community/vuetify-module
 		// eslint-disable-next-line @typescript-eslint/ban-ts-ignore
 		// @ts-ignore
 		theme: {
-			dark: false
+			options: {
+				customProperties: true
+			},
+			dark: true,
+			themes: {
+				light: {
+					primary: '#00d1b2',
+					secondary: '#f5f5f5',
+					accent: '#00d1b2',
+					error: '#f14668',
+					info: '#3298dc',
+					success: '#48c774',
+					warning: '#ffdd57'
+				},
+				dark: {
+					primary: '#3298dc',
+					secondary: '#424242',
+					accent: '#2196F3',
+					error: '#f14668',
+					info: '#2196F3',
+					success: '#4CAF50',
+					warning: '#FB8C00'
+				}
+			}
 		},
 		icons: {
 			iconfont: 'mdiSvg',
@@ -76,7 +101,7 @@ const config: Configuration = {
 		defaultAssets: {
 			icons: false,
 			font: {
-				family: 'Roboto'
+				family: 'Montserrat'
 			}
 		}
 	},
