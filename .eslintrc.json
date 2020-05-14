@@ -19,7 +19,8 @@
 		"no-console": "off",
 		"vue/valid-v-model": "off",
 		"vue/no-parsing-error": "off",
-		"@typescript-eslint/camelcase": "off"
+		"@typescript-eslint/camelcase": "off",
+		"comma-dangle": ["error", "always-multiline"]
 	},
 	"env": {
 		"es6": true,

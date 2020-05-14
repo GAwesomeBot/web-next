@@ -4,7 +4,7 @@ import { TokenClaims, AuthUser } from '@/lib/types/TokenClaims';
 @Module({
 	name: 'auth',
 	stateFactory: true,
-	namespaced: true
+	namespaced: true,
 })
 export default class Auth extends VuexModule {
 

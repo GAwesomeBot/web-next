@@ -19,7 +19,7 @@ import NavBarLink from '@/components/navbar/NavBarLink.vue';
 import NavBarUserProfile from '@/components/navbar/NavBarUserProfile.vue';
 
 @Component({
-	components: { NavBarLink, NavBarUserProfile }
+	components: { NavBarLink, NavBarUserProfile },
 })
 export default class AppLayout extends Vue {
 
@@ -27,7 +27,7 @@ export default class AppLayout extends Vue {
 	public links = [
 		{ to: '/activity', name: 'User Settings', icon: 'user-cog' },
 		{ to: '/dashboard', name: 'Admin Console', icon: 'cogs' },
-		{ to: '/maintainer', name: 'Maintainer Console', icon: 'wrench' }
+		{ to: '/maintainer', name: 'Maintainer Console', icon: 'wrench' },
 	];
 
 }
@@ -38,8 +38,6 @@ export default class AppLayout extends Vue {
 		flex-grow: 0!important;
 	}
 	.gab-app-bar {
-		background-color: transparent !important;
-		color: white !important;
 		box-shadow: 0px 2px 4px -1px rgba(0, 0, 0, 0.14),
 		0px 4px 5px 0px rgba(0, 0, 0, 0.10),
 		0px 1px 10px 0px rgba(0, 0, 0, 0.08) !important;

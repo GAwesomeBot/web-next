@@ -62,7 +62,7 @@ import NavBarLink from '@/components/navbar/NavBarLink.vue';
 import CenteredWindow from '@/lib/structures/CenteredWindow';
 
 @Component({
-	components: { NavBarLink }
+	components: { NavBarLink },
 })
 export default class NavBarUserProfile extends Vue {
 

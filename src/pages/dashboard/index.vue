@@ -44,7 +44,7 @@ import GuildSelector from '@/components/dashboard/GuildSelector.vue';
 @Component({
 	components: { AppHeader, GuildSelector },
 	layout: 'app',
-	middleware: ['auth']
+	middleware: ['auth'],
 })
 export default class DashboardIndexPage extends Vue {
 

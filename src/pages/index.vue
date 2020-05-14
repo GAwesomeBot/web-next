@@ -5,8 +5,7 @@
 				GAwesomeBot
 			</h1>
 		</app-header>
-		<v-container fluid>
-		</v-container>
+		<v-container fluid />
 	</div>
 </template>
 
@@ -16,7 +15,7 @@ import AppHeader from '@/components/header/AppHeader.vue';
 
 @Component({
 	components: { AppHeader },
-	layout: 'app'
+	layout: 'app',
 })
 export default class IndexPage extends Vue {}
 </script>

@@ -6,7 +6,7 @@ import { PublicServerEntry } from '@/lib/types/PublicServerEntry';
 @Module({
 	name: 'servers',
 	stateFactory: true,
-	namespaced: true
+	namespaced: true,
 })
 export default class Servers extends VuexModule {
 

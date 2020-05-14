@@ -1,7 +1,7 @@
 <template>
 	<div class="server-card">
 		<v-lazy>
-			<v-sheet class="px-3 pt-3 pb-3 flex-grow-1" :color="`grey ${theme.isDark ? 'darken-2' : 'lighten-4'}`">
+			<v-sheet class="px-3 pt-3 pb-3 flex-grow-1" :color="`grey ${$vuetify.theme.dark ? 'darken-2' : 'lighten-4'}`">
 				<v-card>
 					<v-img :src="server.icon" height="300px" width="300px" />
 					<v-card-title>

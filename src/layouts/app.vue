@@ -13,7 +13,7 @@ import { appStore } from '@/store';
 import NavBar from '@/components/navbar/NavBar.vue';
 
 @Component({
-	components: { NavBar }
+	components: { NavBar },
 })
 export default class AppLayout extends Vue {
 
@@ -25,5 +25,20 @@ export default class AppLayout extends Vue {
 }
 </script>
 
-<style scoped>
+<style>
+	html {
+		overflow-y: auto;
+	}
+	*::-webkit-scrollbar {
+		width: 0;
+	}
+	*:hover::-webkit-scrollbar {
+		width: 0.3em;
+	}
+	*::-webkit-scrollbar-track {
+		display: none;
+	}
+	*::-webkit-scrollbar-thumb {
+		background-color: var(--v-secondary-lighten1);
+	}
 </style>

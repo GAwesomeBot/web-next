@@ -54,7 +54,7 @@ import AppHeader from '@/components/header/AppHeader.vue';
 
 @Component({
 	components: { ServerCard, AppHeader },
-	layout: 'app'
+	layout: 'app',
 })
 export default class ActivityPage extends Vue {
 

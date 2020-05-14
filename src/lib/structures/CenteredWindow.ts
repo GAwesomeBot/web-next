@@ -24,7 +24,7 @@ export default class CenteredWindow {
 		this.window = window.open(
 			url,
 			this.target,
-			`height=${this.height},width=${this.width},top=${top},left=${left}`
+			`height=${this.height},width=${this.width},top=${top},left=${left}`,
 		);
 		this.interval = window.setInterval(this.checkClosed.bind(this), 1000);
 	}

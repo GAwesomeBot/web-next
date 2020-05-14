@@ -1,3 +1,4 @@
+
 # EditorConfig is awesome: https://EditorConfig.org
 
 # Mark file as the root so that no more parent directory searches are performed
@@ -8,7 +9,7 @@ end_of_line = lf
 insert_final_newline = true
 trim_trailing_whitespace = true
 
-[*.{js,ts}]
+[*.{js,ts,vue}]
 charset = utf-8
 indent_style = tab
 indent_size = 2

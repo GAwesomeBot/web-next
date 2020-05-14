@@ -16,7 +16,7 @@ const SHARED_BROWSERSLIST = [
 	'and not and_chr 78',
 	'and not and_ff 68',
 	'and not android 76',
-	'and not dead'
+	'and not dead',
 ];
 
 const config: Configuration = {
@@ -41,12 +41,12 @@ const config: Configuration = {
 			{ name: 'og:locale', content: 'en_US' },
 			{ name: 'og:site_name', content: 'GAwesomeBot.com' },
 			{ name: 'og:url', content: 'https://GAwesomeBot.com/' },
-			{ name: 'theme-color', content: '#363636' }
+			{ name: 'theme-color', content: '#363636' },
 		],
 		link: [
 			{ rel: 'icon', type: 'image/x-icon', href: '/logo.png' },
-			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' }
-		]
+			{ rel: 'stylesheet', href: 'https://use.fontawesome.com/releases/v5.0.13/css/all.css' },
+		],
 	},
 
 	loading: { color: '#448fa3' },
@@ -60,7 +60,7 @@ const config: Configuration = {
 	modules: [
 		'@nuxtjs/axios',
 		'@nuxtjs/vuetify',
-		'nuxt-i18n'
+		'nuxt-i18n',
 	],
 
 	vuetify: {
@@ -70,7 +70,7 @@ const config: Configuration = {
 		// @ts-ignore
 		theme: {
 			options: {
-				customProperties: true
+				customProperties: true,
 			},
 			dark: true,
 			themes: {
@@ -81,7 +81,7 @@ const config: Configuration = {
 					error: '#f14668',
 					info: '#3298dc',
 					success: '#48c774',
-					warning: '#ffdd57'
+					warning: '#ffdd57',
 				},
 				dark: {
 					primary: '#3298dc',
@@ -90,24 +90,24 @@ const config: Configuration = {
 					error: '#f14668',
 					info: '#2196F3',
 					success: '#4CAF50',
-					warning: '#FB8C00'
-				}
-			}
+					warning: '#FB8C00',
+				},
+			},
 		},
 		icons: {
 			iconfont: 'mdiSvg',
-			values: {}
+			values: {},
 		},
 		defaultAssets: {
-			icons: false,
+			icons: 'mdi',
 			font: {
-				family: 'Montserrat'
-			}
-		}
+				family: 'Montserrat',
+			},
+		},
 	},
 
 	buildModules: [
-		'@nuxt/typescript-build'
+		'@nuxt/typescript-build',
 	],
 
 	build: {
@@ -124,17 +124,17 @@ const config: Configuration = {
 										...SHARED_BROWSERSLIST,
 										'or',
 										'last 4 versions',
-										...SHARED_BROWSERSLIST
-									].join(' ')
-								]
+										...SHARED_BROWSERSLIST,
+									].join(' '),
+								],
 							},
-							corejs: { version: 3 }
-						}
-					]
+							corejs: { version: 3 },
+						},
+					],
 				];
-			}
-		}
-	}
+			},
+		},
+	},
 };
 
 export default config;

@@ -3,7 +3,6 @@
 		text
 		nuxt
 		:to="link"
-		color="white"
 		:class="`navbar-link${active ? ' v-btn--active active-navbar-link' : ''}`"
 		active-class="active-navbar-link"
 		large

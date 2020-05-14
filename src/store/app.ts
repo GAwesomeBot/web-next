@@ -4,7 +4,7 @@ import LocalStorageSyncProp from '@/lib/decorators/LocalStorageSyncProp';
 @Module({
 	name: 'app',
 	stateFactory: true,
-	namespaced: true
+	namespaced: true,
 })
 @LocalStorageSyncProp('selectedGuild')
 @LocalStorageSyncProp('darkMode')
