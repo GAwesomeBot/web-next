@@ -2,12 +2,12 @@
 	<v-app>
 		<nav-bar />
 		<v-content>
+			<v-sheet class="header-sheet">
+				<v-container>
+					<h1>GAwesomeBot Admin Dashboard</h1>
+				</v-container>
+			</v-sheet>
 			<div class="admin-dashboard">
-				<v-sheet class="header-sheet">
-					<v-container>
-						<h1>GAwesomeBot Admin Dashboard</h1>
-					</v-container>
-				</v-sheet>
 				<admin-menu
 					class="dashboard-navigation-drawer"
 				>
@@ -23,24 +23,40 @@
 						subheader="COMMANDS"
 					>
 						<menu-item
-							name="Command Options"
-							icon="cog"
+							name="Command Handler"
 							link="/dashboard/commands/options"
+							icon="cog"
 						/>
 						<menu-item-group
-							name="Command List"
+							name="Commands"
 							icon="cogs"
-							link="/dashboard/commands/list"
 						>
+							<menu-item
+								name="Command List"
+								link="/dashboard/commands/list"
+							/>
 							<menu-item
 								name="RSS Feeds"
 								link="/dashboard/commands/rss"
 							/>
 							<menu-item
-								name="Streamers"
-								link="/dashboard/commands/streamers"
+								name="Auto Translation"
+								link="/dashboard/commands/translation"
+							/>
+							<menu-item
+								name="Tags"
+								link="/dashboard/commands/tags"
+							/>
+							<menu-item
+								name="Trivia Sets"
+								link="/dashboard/commands/trivia"
 							/>
 						</menu-item-group>
+						<menu-item
+							name="Streamers"
+							icon="rss"
+							link="/dashboard/commands/streamers"
+						/>
 						<menu-item
 							name="API Keys"
 							icon="key"
@@ -84,15 +100,35 @@
 						subheader="ADMINISTRATION"
 					>
 						<menu-item
-							name="Admin Levels"
+							name="User Levels"
 							icon="wrench"
 							link="/dashboard/admin/levels"
 						/>
-						<menu-item
+						<menu-item-group
 							name="Moderation"
 							icon="hand-right"
-							link="/dashboard/admin/moderation"
-						/>
+						>
+							<menu-item
+								name="AutoMod"
+								link="/dashboard/admin/moderation"
+							/>
+							<menu-item
+								name="Block List"
+								link="/dashboard/admin/blocked"
+							/>
+							<menu-item
+								name="Muted Users"
+								link="/dashboard/admin/muted"
+							/>
+							<menu-item
+								name="Strikes"
+								link="/dashboard/admin/strikes"
+							/>
+							<menu-item
+								name="Filters"
+								link="/dashboard/admin/filters"
+							/>
+						</menu-item-group>
 						<menu-item
 							name="Voicetext"
 							icon="voicemail"
@@ -171,10 +207,10 @@ export default class DashboardLayout extends Vue {
 
 <style scoped>
 	.admin-dashboard {
-		height: 100vh;
+		height: auto;
 		display: flex;
 		flex-direction: row;
-		flex-wrap: wrap;
+		flex-wrap: nowrap;
 	}
 
 	.header-sheet {

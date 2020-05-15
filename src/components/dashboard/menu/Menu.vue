@@ -24,7 +24,7 @@ export default class Menu extends Vue {}
 		0px -1px 10px 0px rgba(0, 0, 0, 0.08) !important;
 		background-color: #272727 !important;
 		height: calc(100vh - 128px);
-		flex-shrink: 1;
+		flex-shrink: 0;
 		overflow-y: auto;
 	}
 </style>
