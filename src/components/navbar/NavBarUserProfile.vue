@@ -12,7 +12,7 @@
 				:name="name"
 				link=""
 				:on="on"
-				:active="$route.path.includes('/dashboard')"
+				:active="$route.path.includes('/admin')"
 			/>
 		</template>
 		<v-list>
@@ -83,7 +83,7 @@ export default class NavBarUserProfile extends Vue {
 	}
 
 	public get active(): boolean {
-		return this.$route.path.includes('/dashboard');
+		return this.$route.path.includes('/admin');
 	}
 
 	@Prop()

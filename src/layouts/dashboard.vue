@@ -223,21 +223,3 @@ export default class DashboardLayout extends Vue {
 		width: 100%;
 	}
 </style>
-
-<style>
-	html {
-		overflow-y: auto !important;
-	}
-	*::-webkit-scrollbar {
-		width: 0;
-	}
-	*:hover::-webkit-scrollbar {
-		width: 0.3em;
-	}
-	*::-webkit-scrollbar-track {
-		display: none;
-	}
-	*::-webkit-scrollbar-thumb {
-		background-color: var(--v-secondary-lighten1);
-	}
-</style>

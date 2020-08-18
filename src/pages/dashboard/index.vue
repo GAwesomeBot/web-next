@@ -35,7 +35,7 @@
 <script lang="ts">
 import { Component, Vue } from 'nuxt-property-decorator';
 import { appStore } from '@/store';
-import { Guild } from '@/lib/types/Guild';
+import { Guild } from '@/lib/types/admin/Guild';
 import { getGuilds } from '@/services/dashboard';
 
 import AppHeader from '@/components/header/AppHeader.vue';

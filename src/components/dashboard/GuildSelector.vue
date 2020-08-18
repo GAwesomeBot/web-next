@@ -56,7 +56,7 @@
 <script lang="ts">
 import { Component, Prop, Vue } from 'nuxt-property-decorator';
 import { appStore } from '@/store';
-import { Guild } from '@/lib/types/Guild';
+import { Guild } from '@/lib/types/admin/Guild';
 
 @Component({})
 export default class GuildSelector extends Vue {
@@ -66,6 +66,8 @@ export default class GuildSelector extends Vue {
 
 	public selectGuild() {
 		appStore.setSelectedGuild(this.guild.id);
+		// eslint-disable-next-line @typescript-eslint/no-floating-promises
+		this.$router.push('/admin/overview');
 	}
 
 }

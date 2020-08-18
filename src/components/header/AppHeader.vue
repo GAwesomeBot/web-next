@@ -54,6 +54,12 @@ export default class AppHeader extends Vue {
 	.dashboard-search {
 		width: 50%;
 	}
+
+	@media (max-width: 960px) {
+		.dashboard-search {
+			width: 90%;
+		}
+	}
 </style>
 
 <style>

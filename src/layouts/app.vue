@@ -27,10 +27,23 @@ export default class AppLayout extends Vue {
 
 <style>
 	html {
-		overflow-y: auto;
+		overflow-y: hidden !important;
+		height: 100%;
+	}
+	body {
+		height: inherit;
+	}
+	#__nuxt {
+		height: inherit;
+	}
+	#__layout {
+		height: inherit;
 	}
 	*::-webkit-scrollbar {
 		width: 0;
+	}
+	.v-application::-webkit-scrollbar {
+		width: 0.3em !important;
 	}
 	*:hover::-webkit-scrollbar {
 		width: 0.3em;
@@ -40,5 +53,9 @@ export default class AppLayout extends Vue {
 	}
 	*::-webkit-scrollbar-thumb {
 		background-color: var(--v-secondary-lighten1);
+	}
+	.v-application {
+		overflow-y: auto;
+		height: 100%;
 	}
 </style>

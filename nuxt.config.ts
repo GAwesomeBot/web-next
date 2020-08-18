@@ -21,6 +21,9 @@ const SHARED_BROWSERSLIST = [
 
 const config: Configuration = {
 	mode: 'spa',
+	server: {
+		host: '',
+	},
 
 	head: {
 		title: 'GAwesomeBot',

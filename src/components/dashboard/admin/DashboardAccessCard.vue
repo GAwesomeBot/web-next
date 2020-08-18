@@ -9,7 +9,8 @@
 				v-model="read"
 				append-icon="mdi-magnify"
 				label="Read Access"
-				@change="recalc($event)"
+				:disabled="section && globalRead"
+				:value="read || write || (section && globalRead)"
 			/>
 			<v-divider
 				:class="{ 'active-permission-line': write }"
@@ -18,7 +19,8 @@
 				v-model="write"
 				append-icon="mdi-pencil"
 				label="Write Access"
-				@change="recalc($event)"
+				:disabled="section && globalWrite"
+				:value="write || (section && globalWrite)"
 			/>
 			<v-divider
 				v-if="adminOption"
@@ -29,21 +31,25 @@
 				v-model="admin"
 				append-icon="mdi-wrench"
 				label="Admin Access"
-				@change="recalc($event)"
 			/>
 		</div>
 	</v-card>
 </template>
 
 <script lang="ts">
-import { Component, Prop, Vue } from 'nuxt-property-decorator';
+import { Component, Prop } from 'nuxt-property-decorator';
+import AdminComponent from '@/lib/structures/AdminComponent';
+import { DashboardPermissionPiece, DashboardSectionPermissions, Level } from '@/lib/types/admin/Level';
+import { adminStore, appStore } from '@/utils/store-accessor';
 
 @Component({})
-export default class Level extends Vue {
+export default class DashboardAccessCard extends AdminComponent {
 
-	public read = false;
-	public write = false;
-	public admin = false;
+	@Prop()
+	public levelId!: number;
+
+	@Prop()
+	public section!: keyof DashboardSectionPermissions | undefined;
 
 	@Prop()
 	public title!: string;
@@ -54,16 +60,49 @@ export default class Level extends Vue {
 	@Prop()
 	public adminOption!: boolean | null;
 
-	public recalc(val: boolean) {
-		if (val) {
-			this.read = this.read || this.write || this.admin;
-			this.write = this.write || this.admin;
-		} else {
-			this.admin = this.read && this.write && this.admin;
-			this.write = this.read && this.write;
-		}
+	public get globalRead(): boolean {
+		return this.level?.permissions.dashboard.read || false;
 	}
 
+	public get globalWrite(): boolean {
+		return this.level?.permissions.dashboard.write || false;
+	}
+
+	public get read(): boolean | undefined {
+		return this.piece?.read;
+	}
+
+	public set read(val: boolean | undefined) {
+		adminStore.updateLevelDashboardAccess({ levelId: this.levelId, section: this.section, perm: 'read', val: val || false });
+	}
+
+	public get write(): boolean | undefined {
+		return this.piece?.write;
+	}
+
+	public set write(val: boolean | undefined) {
+		adminStore.updateLevelDashboardAccess({ levelId: this.levelId, section: this.section, perm: 'write', val: val || false });
+	}
+
+	public get admin(): boolean | undefined {
+		return this.piece?.admin;
+	}
+
+	public set admin(val: boolean | undefined) {
+		adminStore.updateLevelDashboardAccess({ levelId: this.levelId, section: this.section, perm: 'admin', val: val || false });
+	}
+
+	public get level(): Level | undefined {
+		if (!appStore.selectedGuild) return undefined;
+		return adminStore.guilds[appStore.selectedGuild]?.config.levels.find(level => level.id === this.levelId);
+	}
+
+	public get piece(): DashboardPermissionPiece | undefined {
+		const { level } = this;
+		if (!level) return undefined;
+		if (!this.section) return level.permissions.dashboard;
+		return level.permissions.dashboard.sections[this.section];
+	}
 
 }
 </script>

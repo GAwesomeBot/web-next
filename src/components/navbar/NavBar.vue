@@ -26,7 +26,7 @@ export default class AppLayout extends Vue {
 	@Inject()
 	public links = [
 		{ to: '/activity', name: 'User Settings', icon: 'user-cog' },
-		{ to: '/dashboard', name: 'Admin Console', icon: 'cogs' },
+		{ to: '/admin', name: 'Admin Console', icon: 'cogs' },
 		{ to: '/maintainer', name: 'Maintainer Console', icon: 'wrench' },
 	];
 
